@@ -29,7 +29,7 @@ export default function ProDetails() {
       })
       .catch(function (error) {
         // handle error
-        console.log(error);
+        console.log(error)
       })
       .finally(function () {
         // always executed
@@ -55,7 +55,7 @@ export default function ProDetails() {
       })
       .catch(function (error) {
         // handle error
-        console.log(error);
+        console.log(error)
       });
   }, [pro?.category]);
 

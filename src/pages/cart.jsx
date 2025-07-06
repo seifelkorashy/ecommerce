@@ -145,7 +145,7 @@ export default function cart() {
                   <Button
                     variant="outlined"
                     onClick={() => {
-                      increaseQuantity(item.id), console.log(item.id);
+                      increaseQuantity(item.id);
                     }}
                   >
                     +

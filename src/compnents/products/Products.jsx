@@ -22,9 +22,6 @@ export default function Products({ product }) {
   const { addToCart, cartItems } = useCart();
   const { addToFav, favItems } = useFav();
 
-  console.log(favItems);
-  
-
   const isInCart = cartItems.some((i) => {
     return i.id === product.id;
   });
