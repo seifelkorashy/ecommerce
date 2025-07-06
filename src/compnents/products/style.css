@@ -1,0 +1,60 @@
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons  {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -30px;
+    transition: all 0.3s ease !important;
+    display: none;
+}
+
+
+
+.icons button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background-color: #0090f0;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.product {
+    transition:  0.3s  !important;
+}
+.product .text {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1 !important;
+    -webkit-box-orient: vertical !important;
+}
+
+
+.grid:hover{
+    border: 1px solid #0090f0 !important;
+}
+
+.grid:hover  .icons {
+    right: 5px;
+}

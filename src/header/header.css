@@ -1,0 +1,13 @@
+.top-header {
+    background-color: #fff !important;
+    padding: 10px 50px !important;
+    border-bottom: 1px solid #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+}
+
+
+.top-header .search:hover {
+    background-color: transparent !important;
+}

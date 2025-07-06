@@ -1,0 +1,25 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+
+:root {
+  --main-color: #0090f0;
+  --p-color :#7b7b7b;
+  --bg-color : #f3f3f3;
+  --white-color: #fff;
+  --color-heading : #253237;
+  --border-color:#d6d6d5;
+}
+ 
+.text {
+      overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1 !important;
+    -webkit-box-orient: vertical !important;
+}
