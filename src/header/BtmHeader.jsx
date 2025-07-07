@@ -1,7 +1,7 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import { Container, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
@@ -10,7 +10,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Box from "@mui/material/Box";
 import Menu from "@mui/material/Menu";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Typography from "@mui/material/Typography";
@@ -18,10 +17,8 @@ import { useLocation } from "react-router-dom";
 
 const pages = [
   { title: "home", link: "/" },
-  { title: "about", link: "about" },
-  { title: "accessories", link: "accessories" },
-  { title: "blog", link: "blog" },
-  { title: "contact", link: "contact" },
+  { title: "cart", link: "/cart" },
+  { title: "favorites", link: "/favorite" },
 ];
 export default function BtmHeader() {
   const navigate = useNavigate()

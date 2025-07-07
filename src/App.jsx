@@ -1,6 +1,5 @@
 import BtmHeader from "./header/BtmHeader";
 import TopHeader from "./header/TopHeader";
-import { Container } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./theme";
 import CssBaseline from "@mui/material/CssBaseline";

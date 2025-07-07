@@ -7,7 +7,7 @@ import {
   IconButton,
   useMediaQuery,
 } from "@mui/material";
-import { ArrowCircleLeft, Delete, Info } from "@mui/icons-material";
+import { ArrowCircleLeft, Delete } from "@mui/icons-material";
 import React from "react";
 import { useCart } from "../contexts/CartItems";
 import { useTheme } from "@mui/material/styles";
