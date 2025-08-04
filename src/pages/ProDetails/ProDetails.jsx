@@ -37,7 +37,9 @@ export default function ProDetails() {
       });
   }, [id]);
 
-  
+  useEffect(() => {
+    document.title = pro?.title
+  }, [pro])
 
   const isInCart = cartItems.some((i) => {
     return i.id === pro.id;

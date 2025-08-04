@@ -27,7 +27,9 @@ export default function ProductsCategory() {
       });
   }, [cat]);
 
-
+  useEffect(() => {
+    document.title = `${cat.toLocaleUpperCase()}`
+  } ,[cat])
   
   return (
     <PageTransion>

@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import { useFav } from "../contexts/favoriteitems";
 import { useCart } from "../contexts/CartItems";
 import PageTransion from "../compnents/PageTransion";
+import { useEffect } from "react";
 export default function favorite() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { favItems, removeFromFav } = useFav();
@@ -25,6 +26,9 @@ export default function favorite() {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const reversedItems = [...favItems].reverse();
+  useEffect(() => {
+    document.title = "Favorites"
+  },[])
   return (
     <PageTransion>
     <Container>

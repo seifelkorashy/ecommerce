@@ -8,7 +8,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { ArrowCircleLeft, Delete } from "@mui/icons-material";
-import React from "react";
+import React, {useEffect} from "react";
 import { useCart } from "../contexts/CartItems";
 import { useTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
@@ -22,11 +22,16 @@ export default function cart() {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const reversedItems = [...cartItems].reverse();
+  console.log(reversedItems);
+  
 
   const totalPrice = cartItems.reduce((acc, item) => {
     return acc + item.price * item.quantity;
   }, 0);
-
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    document.title = "Cart"
+  }, [])
   return (
     <PageTransion>
     <Container
@@ -94,6 +99,8 @@ export default function cart() {
         </Stack>
       ) : (
         reversedItems.map((item) => {
+          // console.log(item);
+          
           return (
             <Stack
               key={item.id}

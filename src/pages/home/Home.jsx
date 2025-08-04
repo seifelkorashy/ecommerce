@@ -60,6 +60,10 @@ export default function Home() {
     fetchProducts();
   }, []);
 
+  useEffect(() => {
+    document.title = "Ecoomerce"
+  }, [])
+
   return (
     <div style={{ marginTop: "40px" }}>
       {loading ? (
