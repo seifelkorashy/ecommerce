@@ -105,6 +105,7 @@ export default function Signup() {
                       userName: e.target.value.toLocaleLowerCase(),
                     });
                   }}
+                  required
                 />
               </FloatingLabel>
 
@@ -123,6 +124,7 @@ export default function Signup() {
                       email: e.target.value.toLocaleLowerCase(),
                     });
                   }}
+                  required
                 />
               </FloatingLabel>
 
@@ -137,6 +139,7 @@ export default function Signup() {
                       password: e.target.value.toLocaleLowerCase(),
                     });
                   }}
+                  required
                 />
               </FloatingLabel>
               <FloatingLabel
@@ -154,6 +157,7 @@ export default function Signup() {
                       confirmPassword: e.target.value.toLocaleLowerCase(),
                     });
                   }}
+                  required
                 />
               </FloatingLabel>
               <Button
