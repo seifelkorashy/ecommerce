@@ -22,9 +22,6 @@ export default function ForgotPassword() {
   const [loading, setLoading] = useState(false);
 
 
-    if (currentUser) {
-    return <Navigate to="/" replace />;
-  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -44,6 +41,11 @@ export default function ForgotPassword() {
   useEffect(() => {
     document.title = "Reset Paasword";
   }, []);
+
+  
+    if (currentUser) {
+    return <Navigate to="/" replace />;
+  }
   return (
     <PageTransion>
       <Container className="d-flex align-items-center justify-content-center mt-5">

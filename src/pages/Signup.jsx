@@ -11,9 +11,10 @@ import {
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import PageTransion from "../compnents/PageTransion";
+import GoogleIcon from '@mui/icons-material/Google';
 
 export default function Signup() {
-  const { signup, currentUser } = useAuth();
+  const { signup, currentUser,signInWithGoogle } = useAuth();
 
   const [inputs, setInputs] = useState({
     userName: "",
@@ -27,9 +28,7 @@ export default function Signup() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  if (currentUser) {
-    return <Navigate to="/" replace />;
-  }
+
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -56,13 +55,29 @@ export default function Signup() {
     setLoading(false);
   }
 
-  useEffect(() => {
-    if(!currentUser) {
-      document.title = "Sign Up"
 
+    async function signUpWithGoogle() {
+    try {
+      setError("");
+      setLoading(true);
+      await signInWithGoogle();
+      navigate("/");
+    } catch {
+      setError("An unexpected error occurred. Please try again.");
     }
+    setLoading(false);
+  }
+
+  useEffect(() => {
+      document.title = "Sign Up"  
   }, [])
 
+
+
+
+    if (currentUser) {
+    return <Navigate to="/" replace />;
+  }
   return (
     <PageTransion>
       <Container className="d-flex align-items-center justify-content-center mt-4">
@@ -152,6 +167,16 @@ export default function Signup() {
                 disabled={loading}
               >
                 Sign Up
+              </Button>
+              <Button
+                variant="primary"
+                type="submit"
+                className="mt-3 w-100"
+                disabled={loading}
+                onClick={signUpWithGoogle}
+              >
+                <GoogleIcon/> Sign Up With Google
+                
               </Button>
             </form>
           </Card.Body>

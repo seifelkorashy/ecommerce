@@ -6,6 +6,8 @@ import {
   signOut,
   updateProfile,
   sendPasswordResetEmail,
+  signInWithPopup,
+  GoogleAuthProvider
 } from "firebase/auth";
 import auth from "../firebase";
 
@@ -32,6 +34,11 @@ export default function AuthProvider({ children }) {
         throw error;
       });
   };
+
+    const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
+  }
 
   const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
@@ -65,7 +72,8 @@ export default function AuthProvider({ children }) {
         signup,
         login,
         logOut,
-        resetPassword
+        resetPassword, 
+        signInWithGoogle
       }}
     >
       {!loading && children}

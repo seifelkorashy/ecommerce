@@ -11,9 +11,10 @@ import {
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import PageTransion from "../compnents/PageTransion";
+import { Google } from "@mui/icons-material";
 
 export default function Login() {
-  const { login, currentUser } = useAuth();
+  const { login, currentUser, signInWithGoogle } = useAuth();
 
   const [inputs, setInputs] = useState({
     email: "",
@@ -24,10 +25,6 @@ export default function Login() {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
-  if (currentUser) {
-    return <Navigate to="/" replace />;
-  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -43,9 +40,25 @@ export default function Login() {
     setLoading(false);
   }
 
+  async function signWithGoogle() {
+    try {
+      setError("");
+      setLoading(true);
+      await signInWithGoogle();
+      navigate("/");
+    } catch {
+      setError("An unexpected error occurred. Please try again.");
+    }
+    setLoading(false);
+  }
+
   useEffect(() => {
-    document.title = "Log In"
-  }, [])
+    document.title = "Log In";
+  }, []);
+
+  if (currentUser) {
+    return <Navigate to="/" replace />;
+  }
 
   return (
     <PageTransion>
@@ -101,6 +114,16 @@ export default function Login() {
                 disabled={loading}
               >
                 log in
+              </Button>
+
+              <Button
+                variant="primary"
+                type="submit"
+                className="mt-3 w-100"
+                disabled={loading}
+                onClick={signWithGoogle}
+              >
+                <Google /> Sign In With Google
               </Button>
             </form>
           </Card.Body>

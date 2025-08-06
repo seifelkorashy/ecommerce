@@ -43,11 +43,9 @@ function App() {
             <Route path="/favorite" element={<Favorite />}></Route>
             <Route path="/products/:id" element={<ProDetails />}></Route>
             <Route path="/category/:cat" element={<ProductsCategory />}></Route>
-            <Route path={"/signup"}  element={ <Signup />}/>
-            <Route path="/login"  element={ <Login />} />
-            <Route path="/forgot-password" element={ <ForgotPassword />} />
-
-
+            <Route path={"/signup"} element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
           </Routes>
         </AnimatePresence>
       </FavProvider>
