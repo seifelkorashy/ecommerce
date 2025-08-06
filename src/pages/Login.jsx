@@ -87,7 +87,6 @@ export default function Login() {
                       email: e.target.value.toLocaleLowerCase(),
                     });
                   }}
-                  required
                 />
               </FloatingLabel>
               <div className="w-100 mb-1" style={{ textAlign: "right" }}>
@@ -104,7 +103,6 @@ export default function Login() {
                       password: e.target.value.toLocaleLowerCase(),
                     });
                   }}
-                  required
                 />
               </FloatingLabel>
               <Button
